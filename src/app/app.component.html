@@ -1,5 +1,7 @@
 <div class="content">
-  <h1>Welcome to {{ title }}!</h1>
-  <p>This is a simple Angular application that will be developed into a Pokedex portfolio.</p>
-  <router-outlet></router-outlet>
+  <app-navigation></app-navigation>
+  <div class="page-content">
+    <router-outlet></router-outlet>
+  </div>
+  <app-footer></app-footer>
 </div>
