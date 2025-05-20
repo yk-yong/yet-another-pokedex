@@ -1,6 +1,103 @@
-/* You can add global styles to this file, and also import other style files */
-body {
+/* Importing variables for Pokedex theme */
+@import './assets/scss/variables';
+
+/* Global styles using Pokedex theme */
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background-color: #f7f7f7;
 }
+
+html, body {
+  height: 100%;
+  font-family: $primary-font;
+  font-size: 16px;
+  line-height: 1.5;
+  color: $dark-gray;
+  background-color: $light-gray;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $display-font;
+  margin-bottom: $spacing-md;
+  color: $pokedex-blue;
+}
+
+a {
+  color: $pokedex-blue;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  
+  &:hover {
+    color: $pokedex-dark-blue;
+  }
+}
+
+button {
+  cursor: pointer;
+  background-color: $pokedex-red;
+  color: $white;
+  border: none;
+  border-radius: $border-radius-sm;
+  padding: $spacing-sm $spacing-md;
+  font-family: $primary-font;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+  
+  &:hover {
+    background-color: $pokedex-dark-red;
+  }
+  
+  &:disabled {
+    background-color: $medium-gray;
+    cursor: not-allowed;
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+  
+  @media (max-width: $screen-sm) {
+    padding: 0 $spacing-sm;
+  }
+}
+
+/* Utility classes */
+.text-center {
+  text-align: center;
+}
+
+.mt-1 { margin-top: $spacing-xs; }
+.mt-2 { margin-top: $spacing-sm; }
+.mt-3 { margin-top: $spacing-md; }
+.mt-4 { margin-top: $spacing-lg; }
+.mt-5 { margin-top: $spacing-xl; }
+
+.mb-1 { margin-bottom: $spacing-xs; }
+.mb-2 { margin-bottom: $spacing-sm; }
+.mb-3 { margin-bottom: $spacing-md; }
+.mb-4 { margin-bottom: $spacing-lg; }
+.mb-5 { margin-bottom: $spacing-xl; }
+
+/* Pokemon type colors */
+.type-normal { background-color: #A8A878; }
+.type-fire { background-color: #F08030; }
+.type-water { background-color: #6890F0; }
+.type-grass { background-color: #78C850; }
+.type-electric { background-color: #F8D030; }
+.type-ice { background-color: #98D8D8; }
+.type-fighting { background-color: #C03028; }
+.type-poison { background-color: #A040A0; }
+.type-ground { background-color: #E0C068; }
+.type-flying { background-color: #A890F0; }
+.type-psychic { background-color: #F85888; }
+.type-bug { background-color: #A8B820; }
+.type-rock { background-color: #B8A038; }
+.type-ghost { background-color: #705898; }
+.type-dragon { background-color: #7038F8; }
+.type-dark { background-color: #705848; }
+.type-steel { background-color: #B8B8D0; }
+.type-fairy { background-color: #EE99AC; }

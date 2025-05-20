@@ -1,0 +1,20 @@
+<div class="pokemon-card pokemon-card--pokedex">
+  <div class="pokemon-card__content">
+    <div class="pokemon-card__number">
+      #{{ formatId(pokemon.id) }}
+    </div>
+    <div class="pokemon-card__image-container">
+      <img class="pokemon-card__image" [src]="pokemonImage" [alt]="pokemon.name">
+    </div>
+    <div class="pokemon-card__info">
+      <div class="pokemon-card__name">{{ capitalize(pokemon.name) }}</div>
+      <div class="pokemon-card__types">
+        @for (type of pokemon.types; track type) {
+          <span class="type-badge" [ngClass]="'type-' + type.toLowerCase()">
+            {{ type }}
+          </span>
+        }
+      </div>
+    </div>
+  </div>
+</div>

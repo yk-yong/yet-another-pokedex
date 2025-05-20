@@ -1,0 +1,97 @@
+@import '../../../assets/scss/variables';
+
+.pokemon-card {
+  background-color: $white;
+  border-radius: $border-radius-lg;
+  box-shadow: $box-shadow-md;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  position: relative;
+  cursor: pointer;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: $box-shadow-lg;
+  }
+  
+  &__number {
+    position: absolute;
+    top: $spacing-sm;
+    right: $spacing-sm;
+    background-color: rgba($black, 0.6);
+    color: $white;
+    border-radius: $border-radius-sm;
+    padding: $spacing-xs $spacing-sm;
+    font-size: 0.8rem;
+    font-weight: bold;
+  }
+  
+  &__image-container {
+    background: linear-gradient(to bottom, $light-gray, $white);
+    padding: $spacing-md;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 180px;
+  }
+  
+  &__image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+  
+  &__info {
+    padding: $spacing-md;
+    border-top: 2px solid $light-gray;
+  }
+  
+  &__name {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: $spacing-sm;
+    color: $dark-gray;
+    font-family: $display-font;
+  }
+  
+  &__types {
+    display: flex;
+    gap: $spacing-xs;
+    
+    .type-badge {
+      padding: $spacing-xs $spacing-sm;
+      border-radius: $border-radius-sm;
+      color: $white;
+      font-size: 0.85rem;
+      font-weight: 500;
+      text-transform: capitalize;
+    }
+  }
+  
+  // Pokedex entry styling - red device with screen
+  &--pokedex {
+    background-color: $pokedex-red;
+    padding: $spacing-sm;
+    border-radius: $border-radius-lg;
+    
+    .pokemon-card__content {
+      background-color: $white;
+      border-radius: $border-radius-md;
+      overflow: hidden;
+    }
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: $spacing-md;
+      left: $spacing-md;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background-color: $pokedex-blue;
+      box-shadow: 0 0 5px rgba($white, 0.8);
+      z-index: 2;
+    }
+  }
+}

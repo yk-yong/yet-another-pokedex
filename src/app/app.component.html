@@ -1,7 +1,40 @@
-<div class="content">
-  <app-navigation></app-navigation>
-  <div class="page-content">
-    <router-outlet></router-outlet>
-  </div>
+<!-- Main Layout -->
+<div class="app-container">
+  <!-- Header -->
+  <app-header></app-header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="container">
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="hero__content">
+          <h1 class="hero__title">{{ title }}</h1>
+          <p class="hero__subtitle">Explore the world of Pokémon with detailed information on each species, their types, abilities, and more.</p>
+          
+          <!-- Search Component -->
+          <div class="search-container">
+            <app-search (search)="onSearch($event)"></app-search>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Featured Pokémon -->
+      <section class="pokemon-section">
+        <h2 class="section-title">Featured Pokémon</h2>
+        <div class="pokemon-grid">
+          @for (pokemon of samplePokemon; track pokemon.id) {
+            <div class="pokemon-grid__item">
+              <app-pokemon-card [pokemon]="pokemon"></app-pokemon-card>
+            </div>
+          }
+        </div>
+      </section>
+      
+      <!-- Router Outlet for other pages -->
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+  <!-- Footer -->
   <app-footer></app-footer>
 </div>
