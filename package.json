@@ -8,7 +8,11 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development"
   },
-  "keywords": ["angular", "pokedex", "portfolio"],
+  "keywords": [
+    "angular",
+    "pokedex",
+    "portfolio"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -24,9 +28,9 @@
     "zone.js": "^0.15.0"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^19.2.0",
-    "@angular/cli": "^19.2.0",
-    "@angular/compiler-cli": "^19.2.0",
-    "typescript": "~5.4.0"
+    "@angular-devkit/build-angular": "^19.2.12",
+    "@angular/cli": "^19.2.12",
+    "@angular/compiler-cli": "^19.2.11",
+    "typescript": "~5.5.0"
   }
 }
