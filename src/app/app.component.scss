@@ -87,6 +87,15 @@
 .search-container {
   max-width: 600px;
   margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.page-content {
+  flex: 1;
+  padding: 20px 0;
 }
 
 .section-title {

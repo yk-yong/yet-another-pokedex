@@ -5,6 +5,8 @@ import { FooterComponent } from './components/shared/footer/footer.component';
 import { SearchComponent } from './components/search/search.component';
 import { PokemonCardComponent } from './components/pokemon-card/pokemon-card.component';
 import { CommonModule } from '@angular/common';
+import { NavigationComponent } from './navigation/navigation.component';
+import { FooterComponent } from './footer/footer.component';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +17,9 @@ import { CommonModule } from '@angular/common';
     HeaderComponent, 
     FooterComponent, 
     SearchComponent,
-    PokemonCardComponent
+    PokemonCardComponent,
+    NavigationComponent, 
+    FooterComponent
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
