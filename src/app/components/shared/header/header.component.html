@@ -1,0 +1,15 @@
+<header class="header">
+  <div class="header__container">
+    <div class="header__logo">
+      <div class="pokeball-icon"></div>
+      <span class="header__logo-text">Pokédex</span>
+    </div>
+    <nav class="header__nav">
+      <ul>
+        @for (link of navLinks; track link.path) {
+          <li><a [href]="link.path">{{ link.title }}</a></li>
+        }
+      </ul>
+    </nav>
+  </div>
+</header>

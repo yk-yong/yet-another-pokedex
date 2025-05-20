@@ -6,6 +6,15 @@ A personal portfolio project built with Angular, designed to showcase Pokémon i
 - Modern Angular architecture
 - Responsive design
 - Pokémon data visualization
+- Pokedex-themed styling with custom components
+- Modular component architecture
+
+## Components
+The application includes the following components:
+- **Header**: Navigation bar with Pokedex branding
+- **Footer**: Site footer with links and copyright information
+- **Pokemon Card**: Card component to display Pokemon information
+- **Search**: Pokedex-themed search component
 
 ## Development
 This project was generated with Angular CLI.
@@ -20,3 +29,11 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 - Angular 19+
 - TypeScript
 - SCSS for styling
+- Modular component design
+
+## Styling
+The application uses a custom Pokedex-themed styling system with:
+- SCSS variables for consistent theming
+- Responsive design for all screen sizes
+- Pokemon type-based color coding
+- Styled to match classic Pokedex devices

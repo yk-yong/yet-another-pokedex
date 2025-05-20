@@ -1,0 +1,17 @@
+<div class="search search--pokedex">
+  <form (ngSubmit)="onSubmit()" class="search__form">
+    <span class="search__icon">🔍</span>
+    <input 
+      type="text" 
+      class="search__input" 
+      [(ngModel)]="searchTerm" 
+      name="searchTerm" 
+      placeholder="Search Pokémon by name or ID..."
+      aria-label="Search Pokémon"
+    >
+    <button type="submit" class="search__button">Search</button>
+    @if (searchTerm) {
+      <button type="button" class="search__button search__button--clear" (click)="clearSearch()">Clear</button>
+    }
+  </form>
+</div>

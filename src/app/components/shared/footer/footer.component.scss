@@ -1,0 +1,90 @@
+@import '../../../../assets/scss/variables';
+
+.footer {
+  background-color: $pokedex-dark-red;
+  color: $white;
+  padding: $spacing-lg 0;
+  margin-top: $spacing-xl;
+  
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 $spacing-md;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: $spacing-lg;
+    
+    @media (max-width: $screen-md) {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+  
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    
+    &-text {
+      font-size: 1.25rem;
+      font-weight: bold;
+      color: $white;
+    }
+  }
+  
+  &__links {
+    display: flex;
+    gap: $spacing-lg;
+    list-style-type: none;
+    
+    @media (max-width: $screen-sm) {
+      flex-direction: column;
+      gap: $spacing-sm;
+    }
+    
+    li a {
+      color: $white;
+      text-decoration: none;
+      transition: color 0.2s ease;
+      
+      &:hover {
+        color: $pokedex-yellow;
+      }
+    }
+  }
+  
+  &__copyright {
+    width: 100%;
+    text-align: center;
+    margin-top: $spacing-lg;
+    padding-top: $spacing-md;
+    border-top: 1px solid rgba($white, 0.1);
+    font-size: 0.9rem;
+    color: rgba($white, 0.8);
+  }
+  
+  .pokeball-icon {
+    display: inline-block;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient($white 0%, $white 45%, $black 45%, $black 55%, $pokedex-red 55%, $pokedex-red 100%);
+    border-radius: 50%;
+    border: 2px solid $white;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background-color: $white;
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border: 1px solid $black;
+    }
+  }
+}
