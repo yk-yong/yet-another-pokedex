@@ -2,16 +2,33 @@
   <h2>Pokémon List</h2>
   <p>Here are some of the most popular Pokémon. Click on a card to learn more!</p>
   
-  <div class="pokemon-grid">
-    <div class="pokemon-card" *ngFor="let pokemon of pokemonList">
-      <div class="pokemon-image">
-        <img [src]="pokemon.imageUrl" [alt]="pokemon.name">
-      </div>
-      <div class="pokemon-info">
-        <h3>{{ pokemon.name }}</h3>
-        <p><strong>#{{ pokemon.id }}</strong></p>
-        <p>Type: {{ pokemon.type }}</p>
+  <!-- Loading state -->
+  @if (isLoading) {
+    <div class="loading">
+      <p>Loading Pokémon data...</p>
+    </div>
+  }
+  
+  <!-- Error message -->
+  @if (error && !isLoading) {
+    <div class="error-message">
+      <p>{{ error }}</p>
+    </div>
+  }
+  
+  <!-- Pokemon grid -->
+  @if (!isLoading && pokemonList.length > 0) {
+    <div class="pokemon-grid">
+      <div class="pokemon-card" *ngFor="let pokemon of pokemonList">
+        <div class="pokemon-image">
+          <img [src]="pokemon.imageUrl" [alt]="pokemon.name">
+        </div>
+        <div class="pokemon-info">
+          <h3>{{ pokemon.name }}</h3>
+          <p><strong>#{{ pokemon.id }}</strong></p>
+          <p>Type: {{ pokemon.type }}</p>
+        </div>
       </div>
     </div>
-  </div>
+  }
 </div>

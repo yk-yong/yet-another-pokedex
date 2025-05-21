@@ -142,6 +142,24 @@
   }
 }
 
+.loading, .error-message {
+  text-align: center;
+  padding: $spacing-xl;
+  margin: $spacing-md 0;
+  border-radius: $border-radius-md;
+}
+
+.loading {
+  color: $pokedex-blue;
+  background-color: rgba($pokedex-blue, 0.05);
+}
+
+.error-message {
+  color: $pokedex-red;
+  background-color: rgba($pokedex-red, 0.05);
+  border: 1px solid rgba($pokedex-red, 0.2);
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
