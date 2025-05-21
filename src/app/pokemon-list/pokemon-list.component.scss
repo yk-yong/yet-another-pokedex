@@ -48,4 +48,22 @@
       }
     }
   }
+  
+  .loading, .error-message {
+    text-align: center;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+  }
+
+  .loading {
+    color: #2a75bb; // PokeDex blue
+    background-color: rgba(42, 117, 187, 0.05);
+  }
+
+  .error-message {
+    color: #ff0000; // PokeDex red
+    background-color: rgba(255, 0, 0, 0.05);
+    border: 1px solid rgba(255, 0, 0, 0.2);
+  }
 }

@@ -1,5 +1,13 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { CommonModule } from "@angular/common";
+import { PokemonService } from "../services/pokemon.service";
+
+interface PokemonListItem {
+  id: number;
+  name: string;
+  type: string;
+  imageUrl: string;
+}
 
 @Component({
   selector: "app-pokemon-list",
@@ -8,49 +16,43 @@ import { CommonModule } from "@angular/common";
   templateUrl: "./pokemon-list.component.html",
   styleUrls: ["./pokemon-list.component.scss"],
 })
-export class PokemonListComponent {
-  pokemonList = [
-    {
-      id: 1,
-      name: "Bulbasaur",
-      type: "Grass/Poison",
-      imageUrl:
-        "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png",
-    },
-    {
-      id: 4,
-      name: "Charmander",
-      type: "Fire",
-      imageUrl:
-        "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/004.png",
-    },
-    {
-      id: 7,
-      name: "Squirtle",
-      type: "Water",
-      imageUrl:
-        "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/007.png",
-    },
-    {
-      id: 25,
-      name: "Pikachu",
-      type: "Electric",
-      imageUrl:
-        "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/025.png",
-    },
-    {
-      id: 54,
-      name: "Psyduck",
-      type: "Water",
-      imageUrl:
-        "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/054.png",
-    },
-    {
-      id: 94,
-      name: "Gengar",
-      type: "Ghost/Poison",
-      imageUrl:
-        "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/094.png",
-    },
-  ];
+export class PokemonListComponent implements OnInit {
+  pokemonList: PokemonListItem[] = [];
+  isLoading = true;
+  error = '';
+
+  constructor(private pokemonService: PokemonService) {}
+
+  ngOnInit(): void {
+    this.loadPokemon();
+  }
+
+  async loadPokemon(): Promise<void> {
+    try {
+      this.isLoading = true;
+      // Fetch the first 20 Pokémon from the API
+      const pokemonData = await this.pokemonService.getPokemonList(20, 0);
+      
+      // Transform the data to match our component's format
+      this.pokemonList = pokemonData.map(pokemon => ({
+        id: pokemon.id,
+        name: this.capitalize(pokemon.name),
+        // Join multiple types with a slash
+        type: pokemon.types.join('/'),
+        imageUrl: pokemon.imageUrl
+      }));
+      
+      this.error = '';
+    } catch (err) {
+      console.error("Failed to load Pokemon list:", err);
+      this.error = 'Failed to load Pokémon data. Please try again later.';
+    } finally {
+      this.isLoading = false;
+    }
+  }
+
+  // Helper function to capitalize the Pokemon name
+  private capitalize(str: string): string {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  }
 }
