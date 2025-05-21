@@ -1,4 +1,4 @@
-@import '../assets/scss/variables';
+@use '../assets/scss/variables';
 
 .app-container {
   min-height: 100vh;
@@ -13,29 +13,29 @@
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 $spacing-md;
-  
-  @media (max-width: $screen-sm) {
-    padding: 0 $spacing-sm;
+  padding: 0 variables.$spacing-md;
+
+  @media (max-width: variables.$screen-sm) {
+    padding: 0 variables.$spacing-sm;
   }
 }
 
 .hero {
-  background-color: $pokedex-red;
-  color: $white;
-  padding: $spacing-xl 0;
-  margin-bottom: $spacing-xl;
+  background-color: variables.$pokedex-red;
+  color: variables.$white;
+  padding: variables.$spacing-xl 0;
+  margin-bottom: variables.$spacing-xl;
   position: relative;
   overflow: hidden;
-  border-radius: 0 0 $border-radius-lg $border-radius-lg;
-  box-shadow: $box-shadow-md;
-  
+  border-radius: 0 0 variables.$border-radius-lg variables.$border-radius-lg;
+  box-shadow: variables.$box-shadow-md;
+
   &::before {
     content: '';
     position: absolute;
     width: 150px;
     height: 150px;
-    background-color: rgba($white, 0.1);
+    background-color: rgba(variables.$white, 0.1);
     border-radius: 50%;
     right: -50px;
     top: -50px;
@@ -46,7 +46,7 @@
     position: absolute;
     width: 200px;
     height: 200px;
-    background-color: rgba($white, 0.05);
+    background-color: rgba(variables.$white, 0.05);
     border-radius: 50%;
     left: -100px;
     bottom: -100px;
@@ -58,27 +58,27 @@
     text-align: center;
     max-width: 800px;
     margin: 0 auto;
-    padding: $spacing-lg;
+    padding: variables.$spacing-lg;
   }
   
   &__title {
     font-size: 2.5rem;
-    color: $white;
-    margin-bottom: $spacing-md;
-    font-family: $display-font;
-    text-shadow: 2px 2px 4px rgba($black, 0.3);
-    
-    @media (max-width: $screen-sm) {
+    color: variables.$white;
+    margin-bottom: variables.$spacing-md;
+    font-family: variables.$display-font;
+    text-shadow: 2px 2px 4px rgba(variables.$black, 0.3);
+
+    @media (max-width: variables.$screen-sm) {
       font-size: 2rem;
     }
   }
   
   &__subtitle {
     font-size: 1.2rem;
-    margin-bottom: $spacing-lg;
+    margin-bottom: variables.$spacing-lg;
     opacity: 0.9;
-    
-    @media (max-width: $screen-sm) {
+
+    @media (max-width: variables.$screen-sm) {
       font-size: 1rem;
     }
   }
@@ -100,8 +100,8 @@
 
 .section-title {
   font-size: 1.8rem;
-  color: $pokedex-blue;
-  margin-bottom: $spacing-lg;
+  color: variables.$pokedex-blue;
+  margin-bottom: variables.$spacing-lg;
   text-align: center;
   position: relative;
   
@@ -110,30 +110,30 @@
     display: block;
     width: 60px;
     height: 4px;
-    background-color: $pokedex-red;
-    margin: $spacing-sm auto 0;
-    border-radius: $border-radius-sm;
+    background-color: variables.$pokedex-red;
+    margin: variables.$spacing-sm auto 0;
+    border-radius: variables.$border-radius-sm;
   }
 }
 
 .pokemon-section {
-  margin: $spacing-xl 0;
+  margin: variables.$spacing-xl 0;
 }
 
 .pokemon-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: $spacing-lg;
-  
-  @media (max-width: $screen-lg) {
+  gap: variables.$spacing-lg;
+
+  @media (max-width: variables.$screen-lg) {
     grid-template-columns: repeat(3, 1fr);
   }
-  
-  @media (max-width: $screen-md) {
+
+  @media (max-width: variables.$screen-md) {
     grid-template-columns: repeat(2, 1fr);
   }
-  
-  @media (max-width: $screen-sm) {
+
+  @media (max-width: variables.$screen-sm) {
     grid-template-columns: 1fr;
   }
   
@@ -144,20 +144,20 @@
 
 .loading, .error-message {
   text-align: center;
-  padding: $spacing-xl;
-  margin: $spacing-md 0;
-  border-radius: $border-radius-md;
+  padding: variables.$spacing-xl;
+  margin: variables.$spacing-md 0;
+  border-radius: variables.$border-radius-md;
 }
 
 .loading {
-  color: $pokedex-blue;
-  background-color: rgba($pokedex-blue, 0.05);
+  color: variables.$pokedex-blue;
+  background-color: rgba(variables.$pokedex-blue, 0.05);
 }
 
 .error-message {
-  color: $pokedex-red;
-  background-color: rgba($pokedex-red, 0.05);
-  border: 1px solid rgba($pokedex-red, 0.2);
+  color: variables.$pokedex-red;
+  background-color: rgba(variables.$pokedex-red, 0.05);
+  border: 1px solid rgba(variables.$pokedex-red, 0.2);
 }
 
 @keyframes fadeIn {
