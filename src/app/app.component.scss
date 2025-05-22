@@ -86,11 +86,10 @@
 
 .search-container {
   max-width: 600px;
-  margin: 0 auto;
+  margin: 0 auto variables.$spacing-lg auto;
   padding: 20px;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
 }
 
 .page-content {
@@ -98,19 +97,26 @@
   padding: 20px 0;
 }
 
+.featured-pokemon {
+  margin-top: variables.$spacing-xl;
+  padding-top: variables.$spacing-lg;
+  border-top: 1px solid rgba(variables.$white, 0.2);
+}
+
 .section-title {
   font-size: 1.8rem;
-  color: variables.$pokedex-blue;
+  color: variables.$white;
   margin-bottom: variables.$spacing-lg;
   text-align: center;
   position: relative;
+  text-shadow: 1px 1px 3px rgba(variables.$black, 0.3);
   
   &::after {
     content: '';
     display: block;
     width: 60px;
     height: 4px;
-    background-color: variables.$pokedex-red;
+    background-color: variables.$white;
     margin: variables.$spacing-sm auto 0;
     border-radius: variables.$border-radius-sm;
   }
@@ -118,6 +124,17 @@
 
 .pokemon-section {
   margin: variables.$spacing-xl 0;
+}
+
+.hero-pokemon-grid {
+  background-color: rgba(variables.$white, 0.1);
+  padding: variables.$spacing-md;
+  border-radius: variables.$border-radius-lg;
+  backdrop-filter: blur(5px);
+  
+  @media (max-width: variables.$screen-md) {
+    padding: variables.$spacing-sm;
+  }
 }
 
 .pokemon-grid {
