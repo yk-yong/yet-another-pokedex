@@ -6,7 +6,7 @@
   <!-- Main Content -->
   <main class="main-content">
     <div class="container">
-      <!-- Hero Section -->
+      <!-- Combined Hero & Featured Pokémon Section -->
       <section class="hero">
         <div class="hero__content">
           <h1 class="hero__title">{{ title }}</h1>
@@ -16,37 +16,37 @@
           <div class="search-container">
             <app-search (search)="onSearch($event)"></app-search>
           </div>
-        </div>
-      </section>
-      
-      <!-- Featured Pokémon -->
-      <section class="pokemon-section">
-        <h2 class="section-title">Featured Pokémon</h2>
-        
-        <!-- Loading state -->
-        @if (isLoading) {
-          <div class="loading">
-            <p>Loading Pokémon data...</p>
-          </div>
-        }
-        
-        <!-- Error message -->
-        @if (error && !isLoading) {
-          <div class="error-message">
-            <p>{{ error }}</p>
-          </div>
-        }
-        
-        <!-- Pokemon grid -->
-        @if (!isLoading && samplePokemon.length > 0) {
-          <div class="pokemon-grid">
-            @for (pokemon of samplePokemon; track pokemon.id) {
-              <div class="pokemon-grid__item">
-                <app-pokemon-card [pokemon]="pokemon"></app-pokemon-card>
+          
+          <!-- Featured Pokémon (integrated into hero) -->
+          <div class="featured-pokemon">
+            <h2 class="section-title">Featured Pokémon</h2>
+            
+            <!-- Loading state -->
+            @if (isLoading) {
+              <div class="loading">
+                <p>Loading Pokémon data...</p>
+              </div>
+            }
+            
+            <!-- Error message -->
+            @if (error && !isLoading) {
+              <div class="error-message">
+                <p>{{ error }}</p>
+              </div>
+            }
+            
+            <!-- Pokemon grid -->
+            @if (!isLoading && samplePokemon.length > 0) {
+              <div class="pokemon-grid">
+                @for (pokemon of samplePokemon; track pokemon.id) {
+                  <div class="pokemon-grid__item">
+                    <app-pokemon-card [pokemon]="pokemon"></app-pokemon-card>
+                  </div>
+                }
               </div>
             }
           </div>
-        }
+        </div>
       </section>
       
       <!-- Router Outlet for other pages -->
